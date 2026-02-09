@@ -1,8 +1,10 @@
 name: Deploy Pipeline
+
 on:
   push:
     branches: [ "main" ]
 
+# These permissions are required for OIDC (role-to-assume) to work
 permissions:
   id-token: write
   contents: read
@@ -15,8 +17,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4  # Upgraded to v4 to fix warnings
         with:
+          # MAKE SURE this secret name matches exactly what is in GitHub Settings > Secrets
           role-to-assume: ${{ secrets.AWS_ROLE_ARN_YOU }}
           aws-region: us-east-1
 
