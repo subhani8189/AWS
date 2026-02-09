@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "my-tf-state-unique-id-123" # <--- REPLACE THIS
+    bucket         = "aws818980" # <--- REPLACE THIS
     key            = "pipeline/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-lock"
