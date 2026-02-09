@@ -8,5 +8,5 @@ module "compute" {
   raw_bucket_arn      = module.storage.raw_bucket_arn
   processed_bucket_id = module.storage.processed_bucket_id
   processed_bucket_arn = module.storage.processed_bucket_arn
-  notification_email  = "subhani8189sms.com" # <--- REPLACE THIS
+  notification_email  = "subhani8189sms@gmail.com" # <--- REPLACE THIS
 }
